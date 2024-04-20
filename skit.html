@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Skit</title>
+</head>
+
+<body>
+    <script>
+        function Skit(a, b) 
+        {
+            this.skitName = a;
+            this.numberOfActors = b;
+            this.dialogue = function () {
+                alert("i am immortal .");
+            }
+        }
+        name = prompt("Enter skit name");
+        actors = parseInt(prompt("Enter number of actors"));
+        var x = new Skit(name, actors);
+        alert("Name of skit: " + x.skitName);
+        alert("Number of actors: " + x.numberOfActors);
+        x.dialogue();
+    </script>
+</body>
+
+</html>
