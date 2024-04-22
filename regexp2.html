@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <title>RegExp2</title>
+</head>
+
+<body>
+    <script>
+        function reg1() {
+            alert("regular expression 1")
+            var x = t1.value;
+            var patt = /\b[ABCD]/i
+            var cities = ["Ahmedabad", "Pune", "Mumbai", "Banglore", "Chennai", "Pondicherry", "Daman"];
+            ans = 0;
+            for (ctr = 0; ctr < cities.length; ctr++) {
+                if (patt.test(cities[ctr])) {
+                    ans = ans + 1;
+                }
+            }
+            document.write("The number of cities found with the pattern is" + ans);
+        }
+
+        function reg2() {
+            alert("regular expression 2")
+            let empid = t1.value;
+            var patt = /E\d{3}/;
+            if (empid.length == 4 && patt.test(empid)) {
+                document.getElementById("s1").innerHTML = "valid Employe id";
+
+            }
+            else {
+                document.getElementById("s1").innerHTML = "In valid Employe id";
+            }
+        }
+
+        function reg3() 
+        {
+            alert("regular expression 3")
+            var text = t1.value;
+            var patt = new RegExp("mumbai", "ig");
+            if (patt.test(text) == true) 
+            {
+                text = text.toUpperCase();
+                document.getElementById("s1").innerHTML = text;
+            }
+            else 
+            {
+                x = document.getElementById("s1")
+                x.innerHTML = text;
+            }
+        }
+
+        function reg4() 
+        {
+            alert("regular expression 4")
+            var pat = /tamil nadu/ig;
+            var text = t1.value;
+
+            if (pat.test(text)) 
+            {
+                text = text.replace(pat, "Chennai");
+                document.getElementById("s1").innerHTML = text;
+
+            }
+            else 
+            {
+                document.getElementById("s1").innerHTML = text;
+            }
+
+        }
+    </script>
+    ENTER THE TEXT:<input type="text" id="t1"><span id="s1"></span>
+    <br>
+
+    <button onclick="reg1()" style="font-size: 2em;">&#128512</button>
+    <br>
+    <button onclick="reg2()" style="font-size: 2em;">&#128513</button>
+    <br>
+    <button onclick="reg3()" style="font-size: 2em;">&#128514</button>
+    <br>
+    <button onclick="reg4()" style="font-size: 2em;">&#129315</button>
+    <br>
+</body>
+
+</html>
