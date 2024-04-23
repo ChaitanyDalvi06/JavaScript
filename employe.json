@@ -1,0 +1,12 @@
+[
+    {
+        "empname":"Reena",
+        "lastname":"Patel",
+        "emphoto":"images/girl.jpg"
+    },
+    {
+        "empname":"Ashwin",
+        "lastname":"Patil",
+        "emphoto":"images/boy.jpg"
+    }
+]
