@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        button {
+            height: 30px;
+            width: 40px;
+            border-radius: 24px;
+            color: blueviolet;
+            background-color: antiquewhite;
+        }
+    </style>
+    <script>
+        function checkMobileNumber() {
+            var mobileNumber = document.getElementById("mobileNumberInput").value;
+            var message;
+
+            if (mobileNumber.length < 10) {
+                message = "Incorrect number: Mobile number should have at least 10 digits.";
+            } else if (mobileNumber.length > 10) {
+                message = "Incorrect number: Mobile number should not exceed 10 digits.";
+            } else {
+                message = "Correct number: Mobile number has 10 digits.";
+            }
+
+            var childWindow = window.open("", "Mobile Number Checker", "width=400,height=200");
+            childWindow.document.write("<p style='color:blue; font-size:20px;'>" + message + "</p>");
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="mobileNumberInput" placeholder="Enter mobile number">
+    <button onclick="checkMobileNumber()">Check</button>
+</body>
+</html>

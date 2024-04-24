@@ -1,0 +1,19 @@
+<html>
+    <script>
+        function createCounter() {
+            let count = 0;
+            return function() {
+                count++;
+                return count;
+            };
+        }
+        
+        const counter = createCounter();
+        
+        alert(counter()); 
+        alert(counter()); 
+        alert(counter()); 
+        
+    </script>
+</html>
+
