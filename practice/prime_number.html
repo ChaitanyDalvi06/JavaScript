@@ -1,0 +1,37 @@
+<html>
+<script>
+    function isPrime(n) 
+    {
+        if (n <= 1) 
+        {
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(n); i++) 
+        {
+            if (n % i === 0) 
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    // Take user input
+    let userInput = parseInt(prompt("Enter a number:"));
+    
+    // Check if the input is prime and display the result
+    if (isPrime(userInput)) 
+    {
+        alert(userInput + " is a prime number.");
+        location.reload();
+    } 
+    else 
+    {
+        alert("ENter a valid number");
+        location.reload();
+    }
+    
+
+</script>
+
+</html>

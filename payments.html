@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title>Payments</title>
+    </head>
+    <body>
+        <script>
+            function upi(mfrom, mto, amount, fun1)
+            {
+                if(mfrom==null||mto==null||amount==null)
+                {
+                    fun1("ERROR")
+                }
+                else{
+                    fun1("SUCCESS")
+                }
+            }
+            function bhimupi(m1, m2, amt)
+            {
+                upi(m1, m2, amt, function(a)
+                    {
+                        if(a.toLowerCase()=="success")
+                            document.write("<p style='color:green'>Payment Done</p>")
+                        else
+                            if(a.toLowerCase()=="error")
+                                document.write("<p style='color:red'>ERROR</p>")
+                            else
+                                document.write("UNKNOWN")
+                    });
+            }
+            function gpay(m1, m2, am)   
+            {
+                upi(m1, m2, amt, function(a)
+                    {
+                        if(a.toLowerCase()=="success")
+                            document.write("<img src='https://funtura.in/tvm/wp-content/themes/funtura/assets/images/success.svg' style='background-size:cover;'>")
+                        else
+                            if(a.toLowerCase()=="error")
+                                document.write("<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT87IgdfCBS-c8DHE1kxiuYvRYTfKpRv4MeWiY_qg2JTg&s' style='background-size:cover;'>")
+                            else
+                                document.write("UNKNOWN")
+                    });
+            }
+
+            function Phonepe(m1, m2, amt)
+            {
+                upi(m1, m2, amt, function(a)
+                    {
+                        if(a.toLowerCase()=="success")
+                            document.write("₹ "+amt+" paid")
+                        else
+                            if(a.toLowerCase()=="error")
+                                document.write("₹ "+amt+" Not  paid")
+                            else
+                                document.write("UNKNOWN")
+                    });
+            }
+
+        </script>
+        <input type="button" onclick="bhimupi(null, null, 9000)" value="BHIM NULL">
+        <br>
+        <input type="button" onclick="bhimupi(1234567890, 9876543201, 20000)" value="BHIM 20000">
+        <br>
+        <input type="button" onclick="gpay(null, null, 9000)" value="GPAY NULL">
+        <br>
+        <input type="button" onclick="gpay(1234567890, 9876543201, 20000)" value="GPAY 20000">
+        <br>
+        <input type="button" onclick="Phonepe(null, null, 9000)" value="Phonepe NULL">
+        <br>
+        <input type="button" onclick="Phonepe(1234567890, 9876543201, 20000)" value="Phonepe 20000">
+        <br>
+    </body>
+</html>
+

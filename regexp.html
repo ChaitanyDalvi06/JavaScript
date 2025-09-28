@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <script>
+            var patt= RegExp("email","ig");
+            var str="small EMAILS";
+            document.write(str.search(patt));
+            document.write("<hr>");
+            document.write(str.replace(patt,"letters"));
+            document.write("<hr>");
+
+            var patt1=/email/ig;
+            var str="email EMAILS";
+            document.write(str.replace(patt1,"letters"));
+            document.write("<hr>");
+            document.write(patt1.exec(str));
+            document.write("<hr>");
+            document.write(patt1.test(str));
+            
+        </script>
+    </body>
+</html>

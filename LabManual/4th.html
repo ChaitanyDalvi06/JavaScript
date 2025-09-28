@@ -1,0 +1,55 @@
+<html>
+    <script>
+        
+function factorial(n) 
+{
+    if (n === 0 || n === 1) 
+    {
+        return 1;
+    } else 
+    {
+        return n * factorial(n - 1);
+    }
+}
+
+
+function square(x) {
+    return x * x;
+}
+
+function arithmeticOperation(num1, num2, operation) {
+    switch (operation) {
+        case '+':
+            return num1 + num2;
+        case '-':
+            return num1 - num2;
+        case '*':
+            return num1 * num2;
+        case '/':
+            if (num2 !== 0) {
+                return num1 / num2;
+            } else {
+                return "Cannot divide by zero";
+            }
+        default:
+            return "Invalid operation";
+    }
+}
+
+function testFunctions() 
+{
+    alert("Factorial of 5: " + factorial(5));
+    alert("Square of 6: " + square(6));
+    alert("10 + 5 = " + arithmeticOperation(10, 5, '+'));
+    alert("10 - 5 = " + arithmeticOperation(10, 5, '-'));
+    alert("10 * 5 = " + arithmeticOperation(10, 5, '*'));
+    alert("10 / 5 = " + arithmeticOperation(10, 5, '/'));
+    alert("10 / 0 = " + arithmeticOperation(10, 0, '/'));
+    alert("10 ^ 5 = " + arithmeticOperation(10, 5, '^'));
+}
+
+
+testFunctions();
+
+    </script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        var indianStates = [
+            { state: "Maharashtra", capital: "Mumbai" },
+            { state: "Andhra Pradesh", capital: "Hyderabad" },
+            { state: "Arunachal Pradesh", capital: "Itanagar" },
+            { state: "Bihar", capital: "Patna" },
+            { state: "Chhattisgarh", capital: "Raipur" },
+            { state: "Goa", capital: "Panaji" },
+            { state: "Gujarat", capital: "Gandhinagar" },
+            { state: "Haryana", capital: "Chandigarh" },
+            { state: "Himachal Pradesh", capital: "Shimla" },
+        ];
+
+        function findCapital(stateName) {
+            for (var i = 0; i < indianStates.length; i++) 
+            {
+                if (indianStates[i].state.toLowerCase() === stateName.toLowerCase()) {
+                    return indianStates[i].capital;
+                }
+            }
+            return "Capital not found";
+        }
+
+        function showCapital() {
+            var stateName = prompt("Enter the name of the state:");
+            var capital = findCapital(stateName);
+            if (capital !== "Capital not found") 
+            {
+                alert("The capital of " + stateName + " is " + capital);
+            } else {
+                alert("Capital not found for the state: " + stateName);
+            }
+        }
+
+        showCapital();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<html>
+<body>
+    <script>
+        function getWeekendDate() 
+        {
+            var currentDate = new Date();
+            var weekendDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate() + (7 - currentDate.getDay()) % 7);
+            document.getElementById("result").innerHTML = "Upcoming weekend date: " + weekendDate.toLocaleDateString();
+        }
+
+        function getMonthStartDate() 
+        {
+            var currentDate = new Date();
+            var monthStartDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+            document.getElementById("result").innerHTML = "Start date of current month: " + monthStartDate.toLocaleDateString();
+        }
+    </script>
+    <button onclick="getWeekendDate()">Get Weekend Date</button>
+    <button onclick="getMonthStartDate()">Get Month Start Date</button>
+    <p id="result"></p>
+</body>
+
+</html>

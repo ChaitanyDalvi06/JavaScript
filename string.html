@@ -1,0 +1,21 @@
+<html>
+<body>
+    <input type="text" id="d1">
+    <button onclick="countWords()">Count Words</button>
+
+    <script>
+        function countWords() 
+        {   
+            let userInput = document.getElementById('d1').value;
+            let inputLowerCase = userInput.toLowerCase();
+            let mumbaiCount = (inputLowerCase.match(/mumbai/g)).length;
+            let chennaiCount = (inputLowerCase.match(/chennai/g)).length;
+            alert('Number of times "Mumbai" appears: ' + mumbaiCount + '\nNumber of times "Chennai" appears: ' + chennaiCount);
+        }
+    </script>
+</body>
+</html>
+
+
+<!-- Mumbai  is the capital of Maharashtra and chennai  is the capital of Tamil Nadu.
+Mumbai is also known as Bombay -->

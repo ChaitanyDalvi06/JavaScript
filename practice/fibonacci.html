@@ -1,0 +1,36 @@
+<html>
+<script>
+    // Function to calculate Fibonacci sequence up to a given number of terms
+    function fibonacci(numTerms) {
+        let fibSeries = [0, 1];
+
+        // Calculate Fibonacci sequence
+        for (let i = 2; i < numTerms; i++) 
+        {
+            fibSeries.push(fibSeries[i - 1] + fibSeries[i - 2]);
+        }
+
+        // Return the Fibonacci sequence array
+        return fibSeries;
+    }
+
+    // Example usage: taking input from the user
+    let numTerms = parseInt(prompt("Enter the number of Fibonacci terms to generate:"));
+
+    // Validate user input
+    if (isNaN(numTerms) || numTerms <= 0) 
+    {
+        alert("Please enter a valid positive number.");
+    } 
+    else 
+    {
+        // Call the fibonacci function and store the result
+        let fibonacciSeries = fibonacci(numTerms);
+
+        // Display the Fibonacci sequence
+        alert("Fibonacci sequence up to " + numTerms + " terms:\n" + fibonacciSeries.join(", "));
+    }
+
+</script>
+
+</html>

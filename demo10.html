@@ -1,0 +1,46 @@
+<!-- 1st one
+<html>
+    <script>
+        let number1 = parseInt(prompt("Enter the first number:"));
+        let number2 = parseInt(prompt("Enter the second number:"));
+        let sum = number1 + number2;
+        console.log("The sum of " + number1 + " and " + number2 + " is: " + sum);
+    </script>
+</html> -->
+
+<!-- <html>
+<script>
+    let number = parseInt(prompt("Enter a number:"));
+    if (!isNaN(number) && number >= 0) {
+        let squareRoot = Math.sqrt(number);
+        console.log("The square root of " + number + " is: " + squareRoot);
+    }
+    else {
+        console.log("Please enter a valid non-negative number.");
+    }
+</script>
+
+</html> -->
+
+<html>
+    <script>
+       
+function calculateTriangleArea(base, height) {
+    return 0.5 * base * height;
+}
+
+
+const base = parseFloat(prompt("Enter the base of the triangle:")); 
+const height = parseFloat(prompt("Enter the height of the triangle:")); 
+
+
+if (isNaN(base) || isNaN(height)) {
+    console.log("Invalid input. Please enter valid numbers for base and height.");
+} else {
+
+    const area = calculateTriangleArea(base, height);
+    console.log("The area of the triangle is: " + area);
+}
+
+    </script>
+</html>

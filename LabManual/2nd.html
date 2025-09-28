@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #020202;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #fbfbfb;
+            text-align: center;
+        }
+
+        button {
+            background-color: #db9b34;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            cursor: pointer;
+            display: block;
+            margin: 10px auto;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #fbfafa;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM Manipulation</h1>
+    <div id="output"></div>
+    <script>
+        const outputDiv = document.getElementById("output");
+
+        function performOperation(operation) {
+            let message;
+            switch (operation) {
+                case "if-else":
+                    message = "If-Else Decision Making:<br>";
+                    message += checkNumber(5);
+                    message += checkNumber(-3);
+                    message += checkNumber(0);
+                    break;
+                case "for-loop":
+                    message = "For Loop:<br>";
+                    message += printNumbers(1, 5);
+                    message += printNumbers(10, 15);
+                    break;
+                case "do-while":
+                    message = "Do-While Loop:<br>";
+                    message += printLoop(5, i => i + ", ");
+                    break;
+                case "while-loop":
+                    message = "While Loop:<br>";
+                    message += printLoop(5, i => i + ", ");
+                    break;
+                default:
+                    message = "Invalid operation";
+            }
+            outputDiv.innerHTML = message;
+        }
+
+        function checkNumber(num) {
+            if (num > 0) return num + " is positive<br>";
+            else if (num < 0) return num + " is negative<br>";
+            else return num + " is zero<br>";
+        }
+
+        function printNumbers(start, end) {
+            let numbers = "Numbers from " + start + " to " + end + ":<br>";
+            for (let i = start; i <= end; i++) {
+                numbers += i + ", ";
+            }
+            return numbers + "<br>";
+        }
+
+        function printLoop(limit, callback) {
+            let output = "";
+            for (let i = 0; i <= limit; i++) {
+                output += callback(i);
+            }
+            return output;
+        }
+    </script>
+
+    <button onclick="performOperation('if-else')">If-Else Decision Making</button >
+    <button onclick="performOperation('for-loop')">For Loop</button>
+    <button onclick="performOperation('do-while')">Do-While Loop</button>
+    <button onclick="performOperation('while-loop')">While Loop</button>
+</body>
+</html>

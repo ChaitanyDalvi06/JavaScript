@@ -1,0 +1,118 @@
+<!-- Project Idea: Create a search filter for a product catalog that allows users to 
+filter products based on various criteria (e.g., price range, category).
+Description: Participants will utilize array methods such as `filter()` and `map()` 
+to implement search functionality for the product catalog. They'll learn how to efficiently manipulate arrays 
+to extract and display relevant data based on user-defined criteria. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Product Filter</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+
+<body>
+
+    <h2>Welcome to our Shop</h2>
+    <h4>Enter category such as Shoes , shirts ,t-shirts , sunglasses .</h4>
+    <h6>*Amount should be 1000 to 2500 dollar</h6>
+
+    <label for="minPrice">Minimum Price:</label>
+
+    <input type="text" id="minPrice" placeholder="Enter minimum price">
+    <br><br>
+    <label for="maxPrice">Maximum Price:</label>
+    <input type="text" id="maxPrice" placeholder="Enter maximum price">
+    <br><br>
+    <label for="category">Category:</label>
+    <input type="text" id="category" placeholder="Enter category">
+    <br><br>
+    <button onclick="filterProducts()">Filter</button>
+
+    <div id="filteredProducts"></div>
+
+    <script>
+        var products = [
+            { id: 1, name: 'Air Jordan 1 Retro High OG "Bred', price: 1000, category: ' shoes' },
+            { id: 2, name: 'Air Jordan 11 Retro "Concord', price: 1500, category: 'shoes' },
+
+            { id: 3, name: 'Air Jordan 3 Retro "Black Cement', price: 2500, category: ' shoes' },
+            { id: 4, name: 'Air Jordan 4 Retro "White Cement', price: 1800, category: 'shoes' },
+
+            { id: 5, name: 'Air Jordan 6 Retro "Infrared', price: 2500, category: ' shoes' },
+            { id: 6, name: 'Nike', price: 1500, category: 't-shirts' },
+
+            { id: 7, name: 'Adidas', price: 2500, category: ' t-shirts' },
+            { id: 8, name: 'Polo', price: 1250, category: 't-shirts' },
+
+            { id: 9, name: 'Hanes', price: 2500, category: ' t-shirts' },
+            { id: 10, name: 'Champion', price: 1300, category: 't-shirts' },
+
+            { id: 11, name: 'H&M', price: 2230, category: 'shirts' },
+            { id: 12, name: 'ZARA', price: 1700, category: 'shirts' },
+
+            { id: 13, name: 'Calvin Klein', price: 2000, category: ' shirts' },
+            { id: 14, name: 'Tommy Hilfiger', price: 1230, category: 'shirts' },
+
+            { id: 15, name: 'DIOR', price: 1000, category: ' shirts' },
+            { id: 16, name: 'Ray-Ban', price: 1350, category: 'sunglasses' },
+
+            { id: 17, name: 'GUCCI', price: 2500, category: ' sunglasses' },
+            { id: 18, name: 'PRADA', price: 1255, category: 'sunglasses' },
+
+            { id: 19, name: 'Oakley', price: 1890, category: ' sunglasses' },
+            { id: 20, name: 'LV', price: 2220, category: 'ssunglasses' },
+
+
+        ];
+
+        function filterByPrice(products, minPrice, maxPrice) {
+            return products.filter(product => product.price >= minPrice && product.price <= maxPrice);
+        }
+
+        function filterByCategory(products, category) {
+            return products.filter(product => product.category.trim().toLowerCase() === category.trim().toLowerCase());
+        }
+
+
+        function filterProducts() {
+            var minPrice = parseFloat(document.getElementById('minPrice').value);
+            var maxPrice = parseFloat(document.getElementById('maxPrice').value);
+            var category = document.getElementById('category').value;
+
+            let filteredProducts = products;
+            if (!isNaN(minPrice) && !isNaN(maxPrice)) {
+                filteredProducts = filterByPrice(filteredProducts, minPrice, maxPrice);
+            }
+            if (category.trim() !== '') {
+                filteredProducts = filterByCategory(filteredProducts, category);
+            }
+
+            displayFilteredProducts(filteredProducts);
+        }
+
+        function displayFilteredProducts(products) {
+            var filteredProductsElement = document.getElementById('filteredProducts');
+            filteredProductsElement.innerHTML = '';
+
+            if (products.length === 0) {
+                filteredProductsElement.innerHTML = '<p>No products match the criteria.</p>';
+                return;
+            }
+
+            var productList = document.createElement('ul');
+            products.forEach(product => {
+                var listItem = document.createElement('li');
+                listItem.textContent = `${product.name} - $${product.price} - ${product.category}`;
+                productList.appendChild(listItem);
+            });
+
+            filteredProductsElement.appendChild(productList);
+        }
+    </script>
+</body>
+</html>
